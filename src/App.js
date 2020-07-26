@@ -1,24 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ComponentWithCallback from './components/ComponentWithCallback';
+import ComponentWithImports from './components/ComponentWithImports';
 
 function App() {
+  const callback = () => {
+    console.log('Callback called!');
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Jest Tests for React Components</h1>
+      <ComponentWithCallback callback={callback} />
+      <ComponentWithImports />
     </div>
   );
 }
